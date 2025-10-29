@@ -26,6 +26,14 @@ limitations under the License.
 
 `cargo-pants` is a Cargo subcommand that provides a bill of materials in a project, and any vulnerabilities that are found on those dependencies, powered by [Sonatype OSS Index](https://ossindex.sonatype.org/).
 
+*This fork adds HTTP Basic Authentication support for the Sonatype OSS Index integration.*
+
+*The original upstream repository currently lacks full support for authenticated requests to Sonatype OSS Index endpoints, which prevents certain use cases where credentials are required for enhanced rate limits or private vulnerability feeds.*
+
+*This fork introduces the necessary modifications to enable Basic Authentication handling within the existing request flow, ensuring compatibility with both anonymous and authenticated access modes.*
+
+*Once the upstream project natively supports Sonatype OSS Index Basic Authentication, this fork will be deprecated and eventually archived, as its purpose will have been fully served.*
+
 ## Why pants?
 
 Don't you check your pants for holes? Similarly, we think you should check your app's dependencies for vulnerabilities, and that's what `cargo-pants` does! As well, we provide a Bill Of Materials from parsing your `Cargo.lock` file, so you can see all the dependencies you are using.
